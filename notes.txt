@@ -1,0 +1,18 @@
+#####################################################################################
+Initializing an interactive instance of excel for testing
+#####################################################################################
+$excel =  New-Object -ComObject Excel.Application
+$excel.Visible = $true
+$book = $excel.Workbooks.Add()
+$sheet = $book.Sheets.Item(1)
+$cell = $sheet.Cells(1,1)
+
+#####################################################################################
+Excel Notes
+#####################################################################################
+Column Width = 0.183*Column Height units
+Max Rows = 1048576
+Max Cols = 16384
+
+#Places a value in the bottom-right most cell in excel
+$sheet.Cells[17179869184].Value = "Hi"
